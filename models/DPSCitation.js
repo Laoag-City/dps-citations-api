@@ -19,6 +19,6 @@ const DPSCitationSchema = new mongoose.Schema({
       remarks: String,
     }
   ]
-},{collection: 'oscpapplications'});
+},{collection: 'citations'});
 
-module.exports = mongoose.model('OSCPApplications', DPSCitationSchema);
+module.exports = mongoose.model('DPSCitation', DPSCitationSchema);
