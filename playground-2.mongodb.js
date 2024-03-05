@@ -10,199 +10,241 @@
 // https://www.mongodb.com/docs/mongodb-vscode/playgrounds/
 
 // Select the database to use.
-use('oscp');
+use('dpscitation');
 
 // Insert a few documents into the sales collection.
-db.getCollection('oscpapplications').insertMany(
+db.getCollection('citations').insertMany(
   [
     {
-      "owner": "Corporation I",
-      "title": "Fence Construction",
-      "dateApplied": "2024-03-01",
-      "conversionStatus": "Approved",
-      "cPermitStatus": true,
-      "ownerName": "Julia Nacino",
-      "applicationTitle": "Construction of 3 Storey Residential House in",
-      "conversionSignatories": [
+      "firstName": "Jeffrey",
+      "LastName": "Silva",
+      "MiddleName": "Megan",
+      "homeAddress": "6236 Roberta Terrace Suite 675 Johnfurt, DE 03100",
+      "licenseNumber": "aX38993087",
+      "dateApprehended": "2023-05-27",
+      "timeApprehended": "10:40:48",
+      "streetApprehended": "Eric Corners",
+      "plateNumber": "Ljn629",
+      "vehicleColor": "Bisque",
+      "apprendingOfficer": "Donna Leach",
+      "amendStatus": true,
+      "violations": [
         {
-          "signatory": "Zoning",
-          "status": null,
-          "remarks": null,
-          "signDate": "2024-03-02"
+          "violation": "Speeding",
+          "amount": 200,
+          "remarks": "Exceeded speed limit by 20mph"
         },
         {
-          "signatory": "BFP",
-          "status": "Approved",
-          "remarks": null,
-          "signDate": "2024-03-02"
-        },
-        {
-          "signatory": "Assessor",
-          "status": "Approved",
-          "remarks": null,
-          "signDate": "2024-03-02"
-        }
-      ],
-      "constructionPermitSignatories": [
-        {
-          "signatory": "Electrical",
-          "status": "Pending",
-          "remarks": null,
-          "signDate": null
+          "violation": "Running a red light",
+          "amount": 150,
+          "remarks": "Passed through red light at intersection"
         }
       ]
     },
     {
-      "owner": "Ms Owner 2",
-      "title": "Title 10",
-      "dateApplied": "2024-03-02",
-      "conversionStatus": true,
-      "cPermitStatus": false,
-      "ownerName": "Hannah",
-      "applicationTitle": "Construction of 3 Storey Residential House in Brgy 29",
-      "conversionSignatories": [
+      "firstName": "Ariel",
+      "LastName": "Brown",
+      "MiddleName": "Nancy",
+      "homeAddress": "50374 Owens Station Coleville, OR 41271",
+      "licenseNumber": "oB93754166",
+      "dateApprehended": "2023-08-03",
+      "timeApprehended": "17:40:44",
+      "streetApprehended": "Paula Forges",
+      "plateNumber": "Teh868",
+      "vehicleColor": "Crimson",
+      "apprendingOfficer": "Kyle Owens",
+      "amendStatus": false,
+      "violations": [
         {
-          "signatory": "Zoning",
-          "status": null,
-          "remarks": null,
-          "signDate": "2024-03-02"
+          "violation": "Illegal parking",
+          "amount": 100,
+          "remarks": "Parked in a no-parking zone"
         },
         {
-          "signatory": "BFP",
-          "status": "Approved",
-          "remarks": null,
-          "signDate": "2024-03-02"
-        },
-        {
-          "signatory": "Assessor",
-          "status": "Approved",
-          "remarks": null,
-          "signDate": "2024-03-02"
-        }
-      ],
-      "constructionPermitSignatories": [
-        {
-          "signatory": "Line and Grade",
-          "status": "Rejected",
-          "remarks": "Non-compliant with regulations",
-          "signDate": null
-        },
-        {
-          "signatory": "Structural",
-          "status": "Pending",
-          "remarks": "Awaiting final approval",
-          "signDate": null
-        },
-        {
-          "signatory": "Architectural",
-          "status": "Approved",
-          "remarks": "Permit granted",
-          "signDate": null
-        },
-        {
-          "signatory": "Electrical",
-          "status": "Approved",
-          "remarks": "Permit granted",
-          "signDate": null
-        },
-        {
-          "signatory": "Sanitary",
-          "status": "Approved",
-          "remarks": "Permit granted",
-          "signDate": null
-        },
-        {
-          "signatory": "Mechanical",
-          "status": "Approved",
-          "remarks": "Permit granted",
-          "signDate": null
+          "violation": "Running a red light",
+          "amount": 150,
+          "remarks": "Passed through red light at intersection"
         }
       ]
     },
     {
-      "owner": "Owner 3",
-      "title": "Title 3",
-      "dateApplied": "2024-03-4",
-      "conversionStatus": true,
-      "ownerName": "George 3",
-      "applicationTitle": "Fence Construction",
-      "conversionSignatories": [
+      "firstName": "Christopher",
+      "LastName": "Meyers",
+      "MiddleName": "Julie",
+      "homeAddress": "70148 Michele Trail Suite 353 Lake Tiffanyfort, WY 01817",
+      "licenseNumber": "OP92234163",
+      "dateApprehended": "2023-03-06",
+      "timeApprehended": "19:34:28",
+      "streetApprehended": "Morris Spur",
+      "plateNumber": "pcG834",
+      "vehicleColor": "MidnightBlue",
+      "apprendingOfficer": "Dana Robles",
+      "amendStatus": false,
+      "violations": [
         {
-          "signatory": "Zoning",
-          "status": null,
-          "remarks": null,
-          "signDate": "2024-03-02"
-        },
-        {
-          "signatory": "BFP",
-          "status": "Approved",
-          "remarks": null,
-          "signDate": "2024-03-02"
-        },
-        {
-          "signatory": "Assessor",
-          "status": "Approved",
-          "remarks": null,
-          "signDate": "2024-03-02"
+          "violation": "Running a red light",
+          "amount": 150,
+          "remarks": "Passed through red light at intersection"
         }
-      ],
-      "constructionPermitSignatories": [
+      ]
+    },
+    {
+      "firstName": "Joseph",
+      "LastName": "Stevens",
+      "MiddleName": "Hailey",
+      "homeAddress": "28211 Elizabeth Prairie Suite 041 Brownmouth, KY 20658",
+      "licenseNumber": "ty13697565",
+      "dateApprehended": "2023-11-21",
+      "timeApprehended": "04:59:06",
+      "streetApprehended": "Stewart Flat",
+      "plateNumber": "WAJ067",
+      "vehicleColor": "MediumOrchid",
+      "apprendingOfficer": "Darryl Cochran",
+      "amendStatus": true,
+      "violations": [
         {
-          "signatory": "Line and Grade",
-          "status": "Rejected",
-          "remarks": "Non-compliant with regulations",
-          "signDate": null
+          "violation": "Illegal parking",
+          "amount": 100,
+          "remarks": "Parked in a no-parking zone"
+        }
+      ]
+    },
+    {
+      "firstName": "Emily",
+      "LastName": "Rodriguez",
+      "MiddleName": "Brooke",
+      "homeAddress": "1832 Daniel Inlet Lake Jessica, ND 58893",
+      "licenseNumber": "RD43582899",
+      "dateApprehended": "2023-02-15",
+      "timeApprehended": "03:04:29",
+      "streetApprehended": "Jessica Way",
+      "plateNumber": "Xqd527",
+      "vehicleColor": "Gold",
+      "apprendingOfficer": "Jerry Dixon",
+      "amendStatus": true,
+      "violations": [
+        {
+          "violation": "Illegal parking",
+          "amount": 100,
+          "remarks": "Parked in a no-parking zone"
         },
         {
-          "signatory": "Structural",
-          "status": "Pending",
-          "remarks": "Awaiting final approval",
-          "signDate": null
+          "violation": "Speeding",
+          "amount": 200,
+          "remarks": "Exceeded speed limit by 20mph"
+        }
+      ]
+    },
+    {
+      "firstName": "Michael",
+      "LastName": "Clark",
+      "MiddleName": "Patricia",
+      "homeAddress": "4248 Richardson Ford Apt. 816 East Michael, MT 97512",
+      "licenseNumber": "MC47528166",
+      "dateApprehended": "2023-07-12",
+      "timeApprehended": "02:18:54",
+      "streetApprehended": "Clark Mission",
+      "plateNumber": "Fmk947",
+      "vehicleColor": "Orchid",
+      "apprendingOfficer": "Steven Hall",
+      "amendStatus": false,
+      "violations": [
+        {
+          "violation": "Running a red light",
+          "amount": 150,
+          "remarks": "Passed through red light at intersection"
+        }
+      ]
+    },
+    {
+      "firstName": "Laura",
+      "LastName": "Johnson",
+      "MiddleName": "Brian",
+      "homeAddress": "385 Young Road Suite 557 South Sarah, KS 66483",
+      "licenseNumber": "LJ98654522",
+      "dateApprehended": "2023-06-02",
+      "timeApprehended": "08:14:37",
+      "streetApprehended": "Young Groves",
+      "plateNumber": "Yir326",
+      "vehicleColor": "Azure",
+      "apprendingOfficer": "Amy Gonzalez",
+      "amendStatus": true,
+      "violations": [
+        {
+          "violation": "Speeding",
+          "amount": 200,
+          "remarks": "Exceeded speed limit by 20mph"
+        }
+      ]
+    },
+    {
+      "firstName": "Brandon",
+      "LastName": "Martinez",
+      "MiddleName": "Christopher",
+      "homeAddress": "Unit 9659 Box 0958 DPO AE 90583",
+      "licenseNumber": "BM21354789",
+      "dateApprehended": "2023-09-29",
+      "timeApprehended": "18:31:25",
+      "streetApprehended": "Stewart Flat",
+      "plateNumber": "WAJ067",
+      "vehicleColor": "MediumOrchid",
+      "apprendingOfficer": "Darryl Cochran",
+      "amendStatus": true,
+      "violations": [
+        {
+          "violation": "Illegal parking",
+          "amount": 100,
+          "remarks": "Parked in a no-parking zone"
+        }
+      ]
+    },
+    {
+      "firstName": "Kathleen",
+      "LastName": "Pierce",
+      "MiddleName": "Kathy",
+      "homeAddress": "9447 Freeman Divide Suite 732 Porterburgh, KY 65465",
+      "licenseNumber": "ux88041388",
+      "dateApprehended": "2023-04-28",
+      "timeApprehended": "05:32:03",
+      "streetApprehended": "Farmer Shore",
+      "plateNumber": "svD820",
+      "vehicleColor": "Snow",
+      "apprendingOfficer": "Megan Carter",
+      "amendStatus": false,
+      "violations": [
+        {
+          "violation": "Speeding",
+          "amount": 200,
+          "remarks": "Exceeded speed limit by 20mph"
         },
         {
-          "signatory": "Architectural",
-          "status": "Approved",
-          "remarks": "Permit granted",
-          "signDate": null
-        },
+          "violation": "Running a red light",
+          "amount": 150,
+          "remarks": "Passed through red light at intersection"
+        }
+      ]
+    },
+    {
+      "firstName": "Hannah",
+      "LastName": "Daugherty",
+      "MiddleName": "Rachel",
+      "homeAddress": "USCGC Gray FPO AE 78432",
+      "licenseNumber": "tc31337331",
+      "dateApprehended": "2023-05-18",
+      "timeApprehended": "05:29:05",
+      "streetApprehended": "Thornton Squares",
+      "plateNumber": "CQl962",
+      "vehicleColor": "Lime",
+      "apprendingOfficer": "Travis Hebert",
+      "amendStatus": true,
+      "violations": [
         {
-          "signatory": "Electrical",
-          "status": "Approved",
-          "remarks": "Permit granted",
-          "signDate": null
-        },
-        {
-          "signatory": "Sanitary",
-          "status": "Approved",
-          "remarks": "Permit granted",
-          "signDate": null
-        },
-        {
-          "signatory": "Mechanical",
-          "status": "Approved",
-          "remarks": "Permit granted",
-          "signDate": null
+          "violation": "Illegal parking",
+          "amount": 100,
+          "remarks": "Parked in a no-parking zone"
         }
       ]
     }
   ]
   );
-  
-  // Run a find command to view items sold on April 4th, 2014.
-  //const salesOnApril4th = db.getCollection('sales').find({
-  //  date: { $gte: new Date('2014-04-04'), $lt: new Date('2014-04-05') }
-  //}).count();
-  
-  // Print a message to the output window.
-  //console.log(`${salesOnApril4th} sales occurred in 2014.`);
-  
-  // Here we run an aggregation and open a cursor to the results.
-  // Use '.toArray()' to exhaust the cursor to return the whole result set.
-  // You can use '.hasNext()/.next()' to iterate through the cursor page by page.
-  //db.getCollection('sales').aggregate([
-  // Find all of the sales that occurred in 2014.
-  //  { $match: { date: { $gte: new Date('2014-01-01'), $lt: new Date('2015-01-01') } } },
-  // Group the total sales for each product.
-  //  { $group: { _id: '$item', totalSaleAmount: { $sum: { $multiply: [ '$price', '$quantity' ] } } } }
-  //]);
   
