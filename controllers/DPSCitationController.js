@@ -12,8 +12,8 @@ exports.createDPSCitation = async (req, res) => {
 
 exports.getDPSCitations = async (req, res) => {
   try {
-    const dpscitations = await DPSCitation.find({});
-    res.status(200).send(dpscitations);
+    const dpscitation = await DPSCitation.find({});
+    res.status(200).send(dpscitation);
   } catch (error) {
     res.status(500).send({error: 'Failed to fetch DPS Citations'});
   }
