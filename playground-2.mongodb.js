@@ -17,8 +17,8 @@ db.getCollection('citations').insertMany(
   [
     {
       "firstName": "Jeffrey",
-      "LastName": "Silva",
-      "MiddleName": "Megan",
+      "lastName": "Silva",
+      "middleName": "Megan",
       "homeAddress": "6236 Roberta Terrace Suite 675 Johnfurt, DE 03100",
       "licenseNumber": "aX38993087",
       "dateApprehended": "2023-05-27",
@@ -26,7 +26,7 @@ db.getCollection('citations').insertMany(
       "streetApprehended": "Eric Corners",
       "plateNumber": "Ljn629",
       "vehicleColor": "Bisque",
-      "apprendingOfficer": "Donna Leach",
+      "apprehendingOfficer": "Donna Leach",
       "amendStatus": true,
       "violations": [
         {
@@ -43,8 +43,8 @@ db.getCollection('citations').insertMany(
     },
     {
       "firstName": "Ariel",
-      "LastName": "Brown",
-      "MiddleName": "Nancy",
+      "lastName": "Brown",
+      "middleName": "Nancy",
       "homeAddress": "50374 Owens Station Coleville, OR 41271",
       "licenseNumber": "oB93754166",
       "dateApprehended": "2023-08-03",
@@ -52,7 +52,7 @@ db.getCollection('citations').insertMany(
       "streetApprehended": "Paula Forges",
       "plateNumber": "Teh868",
       "vehicleColor": "Crimson",
-      "apprendingOfficer": "Kyle Owens",
+      "apprehendingOfficer": "Kyle Owens",
       "amendStatus": false,
       "violations": [
         {
@@ -69,8 +69,8 @@ db.getCollection('citations').insertMany(
     },
     {
       "firstName": "Christopher",
-      "LastName": "Meyers",
-      "MiddleName": "Julie",
+      "lastName": "Meyers",
+      "middleName": "Julie",
       "homeAddress": "70148 Michele Trail Suite 353 Lake Tiffanyfort, WY 01817",
       "licenseNumber": "OP92234163",
       "dateApprehended": "2023-03-06",
@@ -78,7 +78,7 @@ db.getCollection('citations').insertMany(
       "streetApprehended": "Morris Spur",
       "plateNumber": "pcG834",
       "vehicleColor": "MidnightBlue",
-      "apprendingOfficer": "Dana Robles",
+      "apprehendingOfficer": "Dana Robles",
       "amendStatus": false,
       "violations": [
         {
@@ -90,8 +90,8 @@ db.getCollection('citations').insertMany(
     },
     {
       "firstName": "Joseph",
-      "LastName": "Stevens",
-      "MiddleName": "Hailey",
+      "lastName": "Stevens",
+      "middleName": "Hailey",
       "homeAddress": "28211 Elizabeth Prairie Suite 041 Brownmouth, KY 20658",
       "licenseNumber": "ty13697565",
       "dateApprehended": "2023-11-21",
@@ -99,7 +99,7 @@ db.getCollection('citations').insertMany(
       "streetApprehended": "Stewart Flat",
       "plateNumber": "WAJ067",
       "vehicleColor": "MediumOrchid",
-      "apprendingOfficer": "Darryl Cochran",
+      "apprehendingOfficer": "Darryl Cochran",
       "amendStatus": true,
       "violations": [
         {
@@ -111,8 +111,8 @@ db.getCollection('citations').insertMany(
     },
     {
       "firstName": "Emily",
-      "LastName": "Rodriguez",
-      "MiddleName": "Brooke",
+      "lastName": "Rodriguez",
+      "middleName": "Brooke",
       "homeAddress": "1832 Daniel Inlet Lake Jessica, ND 58893",
       "licenseNumber": "RD43582899",
       "dateApprehended": "2023-02-15",
@@ -120,7 +120,7 @@ db.getCollection('citations').insertMany(
       "streetApprehended": "Jessica Way",
       "plateNumber": "Xqd527",
       "vehicleColor": "Gold",
-      "apprendingOfficer": "Jerry Dixon",
+      "apprehendingOfficer": "Jerry Dixon",
       "amendStatus": true,
       "violations": [
         {
@@ -137,8 +137,8 @@ db.getCollection('citations').insertMany(
     },
     {
       "firstName": "Michael",
-      "LastName": "Clark",
-      "MiddleName": "Patricia",
+      "lastName": "Clark",
+      "middleName": "Patricia",
       "homeAddress": "4248 Richardson Ford Apt. 816 East Michael, MT 97512",
       "licenseNumber": "MC47528166",
       "dateApprehended": "2023-07-12",
@@ -146,7 +146,7 @@ db.getCollection('citations').insertMany(
       "streetApprehended": "Clark Mission",
       "plateNumber": "Fmk947",
       "vehicleColor": "Orchid",
-      "apprendingOfficer": "Steven Hall",
+      "apprehendingOfficer": "Steven Hall",
       "amendStatus": false,
       "violations": [
         {
@@ -158,8 +158,8 @@ db.getCollection('citations').insertMany(
     },
     {
       "firstName": "Laura",
-      "LastName": "Johnson",
-      "MiddleName": "Brian",
+      "lastName": "Johnson",
+      "middleName": "Brian",
       "homeAddress": "385 Young Road Suite 557 South Sarah, KS 66483",
       "licenseNumber": "LJ98654522",
       "dateApprehended": "2023-06-02",
@@ -167,7 +167,7 @@ db.getCollection('citations').insertMany(
       "streetApprehended": "Young Groves",
       "plateNumber": "Yir326",
       "vehicleColor": "Azure",
-      "apprendingOfficer": "Amy Gonzalez",
+      "apprehendingOfficer": "Amy Gonzalez",
       "amendStatus": true,
       "violations": [
         {
@@ -179,8 +179,8 @@ db.getCollection('citations').insertMany(
     },
     {
       "firstName": "Brandon",
-      "LastName": "Martinez",
-      "MiddleName": "Christopher",
+      "lastName": "Martinez",
+      "middleName": "Christopher",
       "homeAddress": "Unit 9659 Box 0958 DPO AE 90583",
       "licenseNumber": "BM21354789",
       "dateApprehended": "2023-09-29",
@@ -188,7 +188,7 @@ db.getCollection('citations').insertMany(
       "streetApprehended": "Stewart Flat",
       "plateNumber": "WAJ067",
       "vehicleColor": "MediumOrchid",
-      "apprendingOfficer": "Darryl Cochran",
+      "apprehendingOfficer": "Darryl Cochran",
       "amendStatus": true,
       "violations": [
         {
@@ -200,8 +200,8 @@ db.getCollection('citations').insertMany(
     },
     {
       "firstName": "Kathleen",
-      "LastName": "Pierce",
-      "MiddleName": "Kathy",
+      "lastName": "Pierce",
+      "middleName": "Kathy",
       "homeAddress": "9447 Freeman Divide Suite 732 Porterburgh, KY 65465",
       "licenseNumber": "ux88041388",
       "dateApprehended": "2023-04-28",
@@ -209,7 +209,7 @@ db.getCollection('citations').insertMany(
       "streetApprehended": "Farmer Shore",
       "plateNumber": "svD820",
       "vehicleColor": "Snow",
-      "apprendingOfficer": "Megan Carter",
+      "apprehendingOfficer": "Megan Carter",
       "amendStatus": false,
       "violations": [
         {
@@ -226,8 +226,8 @@ db.getCollection('citations').insertMany(
     },
     {
       "firstName": "Hannah",
-      "LastName": "Daugherty",
-      "MiddleName": "Rachel",
+      "lastName": "Daugherty",
+      "middleName": "Rachel",
       "homeAddress": "USCGC Gray FPO AE 78432",
       "licenseNumber": "tc31337331",
       "dateApprehended": "2023-05-18",
@@ -235,7 +235,7 @@ db.getCollection('citations').insertMany(
       "streetApprehended": "Thornton Squares",
       "plateNumber": "CQl962",
       "vehicleColor": "Lime",
-      "apprendingOfficer": "Travis Hebert",
+      "apprehendingOfficer": "Travis Hebert",
       "amendStatus": true,
       "violations": [
         {

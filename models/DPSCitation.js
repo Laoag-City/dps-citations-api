@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const DPSCitationSchema = new mongoose.Schema({
   firstName: String,
-  LastName: String,
-  MiddleName: String,
+  lastName: String,
+  middleName: String,
   homeAddress: String,
   licenseNumber:String,
   dateApprehended: Date,
@@ -11,7 +11,7 @@ const DPSCitationSchema = new mongoose.Schema({
   streetApprehended: String,
   plateNumber: String,
   vehicleColor: String,
-  apprendingOfficer: String,
+  apprehendingOfficer: String,
   amendStatus: Boolean,
   violations: [
     { violation: String,
