@@ -13,6 +13,7 @@ const DPSCitationSchema = new mongoose.Schema({
   vehicleColor: String,
   apprehendingOfficer: String,
   amendStatus: Boolean,
+  dateAmended: Date,
   violations: [
     { violation: String,
       amount: Number,
