@@ -3,7 +3,10 @@ const router = express.Router();
 const userController = require('../controllers/userController');
 //const authMiddleware = require('../middlewares/auth');
 
-router.post('/register', userController.register);
+if (process.env.NODE_ENV !== 'production') {
+  router.post('/register', userController.register);
+}
+
 router.post('/login', userController.login);
 
 module.exports = router;
