@@ -22,7 +22,7 @@ exports.login = async (req, res) => {
     if (!user || !(await user.comparePassword(req.body.password))) {
       return res.status(401).send({ error: 'Login failed!' });
     }
-    const token = jwt.sign({ _id: user._id, username:user.username }, secretKey);
+    const token = jwt.sign({ _id: user._id, username:user.username }, secretKey,{expiresIn: "1d"});
     res.send({ _id:user._id, username:user.username, userrole:user.userrole, token });
   } catch (error) {
     res.status(400).send(error);

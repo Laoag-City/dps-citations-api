@@ -1,6 +1,6 @@
 services:
-  dps-citation-api:
-    container_name: mongodb-appslaoagcity
+  dps-citations-api:
+    container_name: dps-citations-api
     restart: always
     build: .
     ports:
