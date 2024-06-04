@@ -8,3 +8,10 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
+    networks:
+      - api-network
+
+networks:
+  api-network:
+    external: true
+    name: api-network
