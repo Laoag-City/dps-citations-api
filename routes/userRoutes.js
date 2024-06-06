@@ -5,8 +5,7 @@ const userController = require('../controllers/userController');
 
 if (process.env.NODE_ENV !== 'production') {
   router.post('/register', userController.register);
-}
-
+};
 router.post('/login', userController.login);
 
 module.exports = router;

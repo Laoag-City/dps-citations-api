@@ -9,9 +9,9 @@ services:
       - .:/app
       - /app/node_modules
     networks:
-      - api-network
+      - prod-network
 
 networks:
-  api-network:
+  prod-network:
     external: true
-    name: api-network
+    name: prod-network
