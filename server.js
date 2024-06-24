@@ -27,7 +27,7 @@ if (process.env.NODE_ENV === 'production') {
 mongoose.connect(mongoUri, {
 }).then(()=>{
   console.log(process.env.NODE_ENV);
-  console.log('Connected to MongoDB', mongoUri);
+  console.log('Connected to MongoDB');
 })
 .catch((err) => {
   console.error('Error connecting to MongoDB:', err.message);
