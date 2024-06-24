@@ -23,7 +23,6 @@ if (process.env.NODE_ENV === 'production') {
 
 mongoose.connect(mongoUri, {
 }).then(()=>{
->>>>>>> Stashed changes
   console.log(process.env.NODE_ENV);
   console.log('Connected to MongoDB', mongoUri);
 })
