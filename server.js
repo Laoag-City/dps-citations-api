@@ -10,7 +10,7 @@ const DPSCitationsRoutes = require('./routes/DPSCitationRoutes');
 require('dotenv').config();
 
 const app = express();
-app.use(cors());
+ 
 
 const port = process.env.PORT || (process.env.NODE_ENV === 'production' ? 3081 : 3002);
 app.use(bodyParser.json());
@@ -52,8 +52,4 @@ const options = {
 
 https.createServer(options, app).listen(port, () => {
   console.log(`Server is up and running on port ${port} with TLS`);
-});
-
-app.listen(port, () => {
-  console.log(`Server is up and running on port ${port}`);
 });
