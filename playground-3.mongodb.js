@@ -3,8 +3,8 @@
 // Use Ctrl+Space inside a snippet or a string literal to trigger completions.
 
 // The current database to use.
-// all password is hahahahahahaha
-use('dpscitation');
+// all password is haha
+use('dps-citations');
 
 // Create a new document in the collection.
 db.getCollection('users').insertMany([

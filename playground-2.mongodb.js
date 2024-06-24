@@ -10,7 +10,7 @@
 // https://www.mongodb.com/docs/mongodb-vscode/playgrounds/
 
 // Select the database to use.
-use('dpscitation');
+use('dps-citations');
 
 // Insert a few documents into the sales collection.
 db.getCollection('citations').insertMany(

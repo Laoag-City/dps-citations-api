@@ -22,14 +22,18 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 mongoose.connect(mongoUri, {
+<<<<<<< Updated upstream
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
   useFindAndModify: false
 })
 .then(() => {
+=======
+}).then(()=>{
+>>>>>>> Stashed changes
   console.log(process.env.NODE_ENV);
-  console.log('Connected to MongoDB');
+  console.log('Connected to MongoDB', mongoUri);
 })
 .catch((err) => {
   console.error('Error connecting to MongoDB:', err.message);
