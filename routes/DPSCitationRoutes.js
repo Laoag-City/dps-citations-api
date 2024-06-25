@@ -68,9 +68,10 @@ const authMiddleware = require('../middlewares/authMiddleware');
 
 router.post('/', authMiddleware, DPSCitationController.createDPSCitation);
 router.get('/', authMiddleware, DPSCitationController.getDPSCitations);
-//router.get('/status/:id', DPSCitationController.getDPSCitationsById);
+//router.get('/status/:id', DPSCitationController.getDPSCitationStatusById);
+router.get('/status/:id', DPSCitationController.getDPSCitationStatusById);
 router.get('/:id', authMiddleware, DPSCitationController.getDPSCitationsById);
 router.put('/:id', authMiddleware, DPSCitationController.updateDPSCitation);
-//router.delete('/oscpapplications/:id', auth, applicationController.deleteApplication);
+//router.delete('/oscpapplications/:id', auth, DPSCitationController.deleteCitation);
 
 module.exports = router;

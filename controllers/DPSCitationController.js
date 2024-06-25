@@ -101,6 +101,23 @@ exports.getDPSCitationsById = async (req, res) => {
   }
 };
 
+// Get amendStatus of a DPSCitation by ID
+exports.getDPSCitationStatusById = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const dpscitation = await DPSCitation.findById(id);
+    if (!dpscitation) {
+      return res.status(404).send({ error: 'DPSCitation not found' });
+    }
+
+    res.status(200).send({ amendStatus: dpscitation.amendStatus });
+  } catch (error) {
+    console.error('Error in getDPSCitationStatusById:', error);
+    res.status(500).send({ error: 'Internal Server Error' });
+  }
+};
+
 exports.updateDPSCitation = async (req, res) => {
   try {
     const dpscitation = await DPSCitation.findByIdAndUpdate(req.params.id, req.body, { new: true });
