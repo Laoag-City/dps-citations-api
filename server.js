@@ -1,4 +1,3 @@
-const fs = require('fs');
 const https = require('https');
 const cors = require('cors');
 const express = require('express');
@@ -16,6 +15,10 @@ app.use(bodyParser.json());
 app.use('/users', userRoutes);
 app.use('/dpscitations', DPSCitationsRoutes);
 
+// Route for root path '/'
+app.get('/', (req, res) => {
+  res.send('Laoag DPS APi Server. docs at <a href="https://apps.laoagcity.gov.ph/apidocs/">API Docs</a>');
+});
 // Connect to MongoDB
 mongoose.connect(config.mongoUri, {}).then(() => {
   logger.info(`${process.env.NODE_ENV} environment`);
