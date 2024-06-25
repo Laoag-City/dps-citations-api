@@ -20,6 +20,11 @@ const updateEnvFile = (key, filePath = '.env') => {
     envContent = updatedContent;
   }
 
+  // Ensure the last line ends with a newline
+  if (envContent && !envContent.endsWith('\n')) {
+    envContent += '\n';
+  }
+
   // Append the new JWT_SECRET
   envContent += `JWT_SECRET=${key}\n`;
 
