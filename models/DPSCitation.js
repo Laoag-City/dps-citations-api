@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
 const DPSCitationSchema = new mongoose.Schema({
+  ticketNumber: {
+    type: String,
+    required: true,
+    trim: true
+  },
   firstName: {
     type: String,
     required: true,
