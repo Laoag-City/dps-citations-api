@@ -22,8 +22,8 @@ app.get('/', (req, res) => {
 // Connect to MongoDB
 mongoose.connect(config.mongoUri, {}).then(() => {
   logger.info(`${process.env.NODE_ENV} environment`);
-  logger.info('Connected to MongoDB', { mongoUri: config.mongoUri });
-  //logger.info('Connected to MongoDB');
+  //logger.info('Connected to MongoDB', { mongoUri: config.mongoUri });
+  logger.info('Connected to MongoDB');
 
   if (process.env.NODE_ENV === 'production') {
     https.createServer(config.tlsOptions, app).listen(config.port, () => {
