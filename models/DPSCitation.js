@@ -30,7 +30,6 @@ const DPSCitationSchema = new mongoose.Schema({
   },
   timeApprehended: {
     type: Date,
-    required: true
   },
   streetApprehended: {
     type: String,
