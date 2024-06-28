@@ -17,7 +17,7 @@ app.use('/dpscitations', DPSCitationsRoutes);
 
 // Route for root path '/'
 app.get('/', (req, res) => {
-  res.send('Laoag DPS APi Server. docs at <a href="https://apps.laoagcity.gov.ph/apidocs/">API Docs</a>');
+  res.send('Laoag DPS Citations APi Server. Dsocs at <a href="https://apps.laoagcity.gov.ph/apidocs/dpscitations">API Docs</a>');
 });
 // Connect to MongoDB
 mongoose.connect(config.mongoUri, {}).then(() => {
