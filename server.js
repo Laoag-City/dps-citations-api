@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const userRoutes = require('./routes/userRoutes');
 const DPSCitationsRoutes = require('./routes/DPSCitationRoutes');
-const DPSViolationRoutes = require('./routes/DPSViolationRoutes');
+const DPSViolationsRoutes = require('./routes/DPSViolationRoutes');
 const config = require('./config');
 const logger = require('./utils/logger');
 
@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 
 app.use('/users', userRoutes);
 app.use('/dpscitations', DPSCitationsRoutes);
-//app.use('/violations', DPSViolationRoutes);
+app.use('/violations', DPSViolationsRoutes);
 
 // Route for root path '/'
 app.get('/', (req, res) => {
