@@ -15,14 +15,14 @@ use('dps-citations');
 // Insert a few documents into the sales collection.
 db.getCollection('apprehending-officers').insertMany(
   [
-    { title: 'puso', name: 'mike allan borromeo', designation: 'traffic enforcer' },
-    { title: 'puso', name: 'michael fernandez', designation: 'traffic enforcer' },
-    { title: 'puso', name: 'michael macugay', designation: 'traffic enforcer' },
-    { title: 'puso', name: 'jazmin mamaclay', designation: 'traffic enforcer' },
-    { title: 'puso', name: 'emmanuel navarrete', designation: 'traffic enforcer' },
-    { title: 'puso', name: 'rhealiza pasion', designation: 'traffic enforcer' },
-    { title: 'puso', name: 'rocher john ramos', designation: 'traffic enforcer' },
-    { title: 'puso', name: 'eugene salgado', designation: 'traffic enforcer' },
-    { title: 'puso', name: 'reynor sarandi', designation: 'traffic enforcer' },
+    { title: 'puso', firstName: 'mike allan', lastName: 'borromeo', designation: 'traffic enforcer' },
+    { title: 'puso', firstName: 'michael', lastName: 'fernandez', designation: 'traffic enforcer' },
+    { title: 'puso', firstName: 'michael', lastName: 'macugay',designation: 'traffic enforcer' },
+    { title: 'puso', firstName: 'jazmin', lastName: 'mamaclay',designation: 'traffic enforcer' },
+    { title: 'puso', firstName: 'emmanuel', lastName:'navarrete', designation: 'traffic enforcer' },
+    { title: 'puso', firstName: 'rhealiza', lastName: 'pasion', designation: 'traffic enforcer' },
+    { title: 'puso', firstName: 'rocher john', lastName: 'ramos', designation: 'traffic enforcer' },
+    { title: 'puso', firstName: 'eugene', lastName: 'salgado',designation: 'traffic enforcer' },
+    { title: 'puso', firstName: 'reynor', lastName: 'sarandi',designation: 'traffic enforcer' },
   ]
 );
