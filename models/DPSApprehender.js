@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 
-//{ title: 'puso', name: 'mike allan borromeo', designation: 'traffic enforcer' },
-
 const DPSApprehenderSchema = new mongoose.Schema({
     title: {
       type: String,
@@ -22,6 +20,6 @@ const DPSApprehenderSchema = new mongoose.Schema({
       type: String,
       required: true
     },
-  },{collection: 'violations'});
+  },{collection: 'apprehending-officers'});
 
 module.exports = mongoose.model('DPSApprehender', DPSApprehenderSchema);

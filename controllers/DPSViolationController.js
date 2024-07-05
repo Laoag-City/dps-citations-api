@@ -15,6 +15,6 @@ exports.getDPSCitations = async (req, res) => {
     const dpsviolation = await DPSViolation.find({});
     res.status(200).send(dpsviolation);
   } catch (error) {
-    res.status(500).send({error: 'Failed to fetch DPS Citations'});
+    res.status(500).send({error: 'Failed to fetch DPS Violations List'});
   }
 };
