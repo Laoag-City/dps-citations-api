@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const userRoutes = require('./routes/userRoutes');
 const DPSCitationsRoutes = require('./routes/DPSCitationRoutes');
 const DPSViolationsRoutes = require('./routes/DPSViolationRoutes');
-const DPSApprehenderRoutes = require('./routes/DPSApprehenderRoutes');
+const DPSApprehendersRoutes = require('./routes/DPSApprehenderRoutes');
 const config = require('./config');
 const logger = require('./utils/logger');
 
@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use('/users', userRoutes);
 app.use('/dpscitations', DPSCitationsRoutes);
 app.use('/violations', DPSViolationsRoutes);
-app.use('/apprehenders', DPSApprehenderRoutes);
+app.use('/apprehenders', DPSApprehendersRoutes);
 
 app.get('/', (req, res) => {
   res.send('Laoag DPS Citations APi Server. Docs at <a href="https://apps.laoagcity.gov.ph/apidocs/dpscitations">API Docs</a>');
