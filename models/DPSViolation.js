@@ -75,6 +75,6 @@ const DPSViolationSchema = new mongoose.Schema({
       }
     }
   ]
-},{collection: 'citations'});
+},{collection: 'violations'});
 
 module.exports = mongoose.model('DPSViolation', DPSViolationSchema);
