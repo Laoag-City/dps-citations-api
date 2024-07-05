@@ -17,13 +17,12 @@ app.use(bodyParser.json());
 app.use('/users', userRoutes);
 app.use('/dpscitations', DPSCitationsRoutes);
 app.use('/violations', DPSViolationsRoutes);
-app.use('/apprehender', DPSApprehenderRoutes);
+app.use('/apprehenders', DPSApprehenderRoutes);
 
-// Route for root path '/'
 app.get('/', (req, res) => {
   res.send('Laoag DPS Citations APi Server. Docs at <a href="https://apps.laoagcity.gov.ph/apidocs/dpscitations">API Docs</a>');
 });
-// Connect to MongoDB
+
 mongoose.connect(config.mongoUri, {}).then(() => {
   logger.info(`${process.env.NODE_ENV} environment`);
   //logger.info('Connected to MongoDB', { mongoUri: config.mongoUri });
