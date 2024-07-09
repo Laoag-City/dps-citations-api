@@ -86,7 +86,7 @@ const DPSCitationSchema = new mongoose.Schema({
       }
     }
   ]
-   ASDASDASAS QA  f gdfgsdgfg df
+  
 },{collection: 'citations'});
 
 module.exports = mongoose.model('DPSCitation', DPSCitationSchema);
