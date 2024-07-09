@@ -52,12 +52,23 @@ const DPSCitationSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
-  amendStatus: {
+  commuteStatus: {
     type: Boolean,
     default: false
   },
-  dateAmended: {
+  dateCommuted: {
     type: Date
+  },
+  commutedViolation: 
+  {
+    type: String
+  },
+  commutedViolationAmount: 
+  {
+    type: Number
+  },
+  commutedViolationRemark:{
+    type: String
   },
   violations: [
     {
@@ -75,6 +86,7 @@ const DPSCitationSchema = new mongoose.Schema({
       }
     }
   ]
+  
 },{collection: 'citations'});
 
 module.exports = mongoose.model('DPSCitation', DPSCitationSchema);
