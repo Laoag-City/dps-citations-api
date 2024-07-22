@@ -82,13 +82,44 @@ exports.createDPSCitation = async (req, res) => {
 
 exports.getDPSCitations = async (req, res) => {
   try {
-    const dpscitation = await DPSCitation.find({});
-    res.status(200).send(dpscitation);
+    // Get page and limit from query parameters, with default values
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const skip = (page - 1) * limit;
+
+    // Fetch the total count of documents
+    const totalDocuments = await DPSCitation.countDocuments();
+
+    // Fetch the documents with pagination and sorting by dateApprehended in ascending order
+    const dpsCitations = await DPSCitation.find({})
+      .sort({ dateApprehended: -1 })
+      .skip(skip)
+      .limit(limit);
+
+    // Send the response with paginated results and metadata
+    res.status(200).json({
+      totalDocuments,
+      totalPages: Math.ceil(totalDocuments / limit),
+      currentPage: page,
+      pageSize: limit,
+      dpsCitations,
+    });
   } catch (error) {
-    res.status(500).send({error: 'Failed to fetch DPS Citations'});
+    console.error('Failed to fetch DPS Citations:', error);
+    res.status(500).json({ error: 'Failed to fetch DPS Citations' });
   }
 };
 
+/* exports.getDPSCitations = async (req, res) => {
+  try {
+    const dpsCitations = await DPSCitation.find({});
+    res.status(200).json(dpsCitations);
+  } catch (error) {
+    console.error('Failed to fetch DPS Citations:', error);
+    res.status(500).json({ error: 'Failed to fetch DPS Citations' });
+  }
+};
+ */
 exports.getDPSCitationsById = async (req, res) => {
   try {
     const dpscitation = await DPSCitation.findById(req.params.id);
