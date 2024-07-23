@@ -56,7 +56,7 @@ const DPSCitationSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
-  dateCommuted: {
+  commuteDate: {
     type: Date
   },
   commutedViolation: 
@@ -69,6 +69,20 @@ const DPSCitationSchema = new mongoose.Schema({
   },
   commutedViolationRemark:{
     type: String
+  },
+  paymentStatus:{
+    type: Boolean,
+    default: false
+  },
+  paymentORNumber:{
+    type: String,
+    trim: true
+  },
+  paymentDate:{
+    type: Date
+  },
+  paymentRemarks:{type: String,
+    trim:true
   },
   violations: [
     {
