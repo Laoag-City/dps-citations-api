@@ -71,6 +71,7 @@ exports.deleteDPSCitation = async (req, res) => {
 const { validationResult } = require('express-validator');
 const DPSCitation = require('../models/DPSCitation');
 
+/* old code 
 exports.createDPSCitation = async (req, res) => {
   try {
     const dpscitation = new DPSCitation(req.body);
@@ -78,6 +79,22 @@ exports.createDPSCitation = async (req, res) => {
     res.status(201).send(dpscitation);
   } catch (error) {
     res.status(400).send(error);
+  }
+};
+*/
+
+exports.createDPSCitation = async (req, res) => {
+  try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    const dpscitation = new DPSCitation(req.body);
+    await dpscitation.save();
+    res.status(201).send(dpscitation);
+  } catch (error) {
+    res.status(400).send(error.message);
   }
 };
 
@@ -91,7 +108,7 @@ exports.getDPSCitations = async (req, res) => {
     // Fetch the total count of documents
     const totalDocuments = await DPSCitation.countDocuments();
 
-    // Fetch the documents with pagination and sorting by dateApprehended in ascending order
+    // Fetch the documents with pagination and sorting by dateApprehended in descending order
     const dpsCitations = await DPSCitation.find({})
       .sort({ dateApprehended: -1 })
       .skip(skip)
@@ -123,6 +140,7 @@ exports.getDPSCitations = async (req, res) => {
 };
  */
 
+/* old code
 exports.getDPSCitationsById = async (req, res) => {
   try {
     const dpscitation = await DPSCitation.findById(req.params.id);
@@ -134,22 +152,48 @@ exports.getDPSCitationsById = async (req, res) => {
     res.status(500).send(error);
   }
 };
+*/
 
-// Get amendStatus of a DPSCitation by ID
+exports.getDPSCitationsById = async (req, res) => {
+  try {
+    const dpscitation = await DPSCitation.findById(req.params.id);
+    if (!dpscitation) {
+      return res.status(404).send({ error: 'DPS Citation ID not found' });
+    }
+    res.status(200).send(dpscitation);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+};
+
 exports.getDPSCitationStatusById = async (req, res) => {
   try {
-    const { id } = req.params;
-
-    const dpscitation = await DPSCitation.findById(id);
+    const dpscitation = await DPSCitation.findById(req.params.id);
     if (!dpscitation) {
-      return res.status(404).send({ error: 'DPSCitation not found' });
+      return res.status(404).send({ error: 'DPS Citation ID not found' });
     }
-
-    res.status(200).send({ amendStatus: dpscitation.amendStatus });
+    //res.status(200).send(dpscitation);
+    res.status(200).json({ 
+      commuteStatus: dpscitation.commuteStatus,
+      paymentStatus: dpscitation.paymentStatus
+     });
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+/*   try {
+    const dpscitation = await DPSCitation.findById(req.params.id);
+    if (!dpscitation) {
+      return res.status(404).send({ error: 'DPS Citation ID not found' });
+    }
+    res.status(200).json({ 
+      commuteStatus: dpscitation.commuteStatus,
+      paymentStatus: dpscitation.paymentStatus
+     });
   } catch (error) {
     console.error('Error in getDPSCitationStatusById:', error);
     res.status(500).send({ error: 'Internal Server Error' });
   }
+ */
 };
 
 exports.updateDPSCitation = async (req, res) => {
@@ -161,11 +205,11 @@ exports.updateDPSCitation = async (req, res) => {
 
     const dpscitation = await DPSCitation.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (!dpscitation) {
-      return res.status(404).send({ error: 'DPSCitation not found' });
+      return res.status(404).send({ error: 'DPS Citation ID not found' });
     }
     res.status(200).send(dpscitation);
   } catch (error) {
-    res.status(400).send(error.message); // Handle specific error message
+    res.status(400).send(error.message);
   }
 };
 
