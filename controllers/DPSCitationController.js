@@ -58,10 +58,12 @@ exports.getDPSCitations = async (req, res) => {
     // Build the query object for the search functionality
     const query = {
       $or: [
+        { ticketNumber: { $regex: searchQuery, $options: 'i' } },
         { firstName: { $regex: searchQuery, $options: 'i' } },
         { lastName: { $regex: searchQuery, $options: 'i' } },
         { licenseNumber: { $regex: searchQuery, $options: 'i' } },
         { plateNumber: { $regex: searchQuery, $options: 'i' } },
+        { paymentORNumber: { $regex: searchQuery, $options: 'i' } },
       ],
     };
 
