@@ -52,6 +52,10 @@ const DPSCitationSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
+  apprehendingUnitOf:{
+    type:String,
+    trim: true
+  },
   commuteStatus: {
     type: Boolean,
     default: false
