@@ -132,7 +132,33 @@ exports.getDPSCitationStatusById = async (req, res) => {
  */
 };
 
+const { validationResult } = require('express-validator');
+const DPSCitation = require('../models/DPSCitation'); // Adjust the path as necessary
+
 exports.updateDPSCitation = async (req, res) => {
+  try {
+    // Check for validation errors
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    // Update the citation in the database
+    const dpscitation = await DPSCitation.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (!dpscitation) {
+      return res.status(404).json({ error: 'DPS Citation ID not found' });
+    }
+
+    // Send the updated citation as the response
+    res.status(200).json(dpscitation);
+  } catch (error) {
+    // Handle errors appropriately
+    console.error('Update failed:', error.message);
+    res.status(500).json({ error: 'An error occurred while updating the citation' });
+  }
+};
+
+/* exports.updateDPSCitation = async (req, res) => {
   try {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -147,7 +173,7 @@ exports.updateDPSCitation = async (req, res) => {
   } catch (error) {
     res.status(400).send(error.message);
   }
-};
+}; */
 
 /* exports.updateDPSCitation = async (req, res) => {
   try {
