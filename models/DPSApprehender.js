@@ -20,6 +20,10 @@ const DPSApprehenderSchema = new mongoose.Schema({
       type: String,
       required: true
     },
+    unit:{
+      type: String,
+      required: true
+    }
   },{collection: 'apprehending-officers'});
 
 module.exports = mongoose.model('DPSApprehender', DPSApprehenderSchema);

@@ -56,6 +56,10 @@ const DPSCitationSchema = new mongoose.Schema({
     type:String,
     trim: true
   },
+  apprehendingOfficerId:{
+    type: String,
+    trime: true
+  },
   commuteStatus: {
     type: Boolean,
     default: false
