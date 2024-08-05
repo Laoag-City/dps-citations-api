@@ -50,7 +50,7 @@ const DPSCitationSchema = new mongoose.Schema({
   },
   apprehendingOfficerId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Officer'
+    ref: 'DPSApprehender'
   },
   apprehendingOfficer: {
     type: String,
