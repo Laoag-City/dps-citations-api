@@ -87,8 +87,7 @@ const DPSCitationSchema = new mongoose.Schema({
     trim: true
   },
   amountPaid:{
-    type:Number,
-    required: true
+    type:Number
   },
   paymentDate:{
     type: Date
