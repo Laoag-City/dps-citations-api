@@ -47,6 +47,7 @@ exports.createDPSCitation = async (req, res) => {
   }
 };
 */}
+{/* old code no officerid lookup 
 exports.getDPSCitations = async (req, res) => {
   try {
     // Get page and limit from query parameters, with default values
@@ -83,6 +84,52 @@ exports.getDPSCitations = async (req, res) => {
       currentPage: page,
       pageSize: limit,
       dpsCitations,
+    });
+  } catch (error) {
+    console.error('Failed to fetch DPS Citations:', error);
+    res.status(500).json({ error: 'Failed to fetch DPS Citations' });
+  }
+};
+ */}
+ 
+ // Get DPS Citations with search and pagination
+exports.getDPSCitations = async (req, res) => {
+  try {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const skip = (page - 1) * limit;
+    const searchQuery = req.query.search || '';
+
+    const query = {
+      $or: [
+        { ticketNumber: { $regex: searchQuery, $options: 'i' } },
+        { firstName: { $regex: searchQuery, $options: 'i' } },
+        { lastName: { $regex: searchQuery, $options: 'i' } },
+        { licenseNumber: { $regex: searchQuery, $options: 'i' } },
+        { plateNumber: { $regex: searchQuery, $options: 'i' } },
+        { paymentORNumber: { $regex: searchQuery, $options: 'i' } },
+      ],
+    };
+
+    const totalDocuments = await DPSCitation.countDocuments(query);
+
+    const dpsCitations = await DPSCitation.find(query)
+      .populate('apprehendingOfficerId', 'firstName lastName')
+      .sort({ dateApprehended: -1 })
+      .skip(skip)
+      .limit(limit);
+
+    const formattedCitations = dpsCitations.map(citation => ({
+      ...citation.toObject(),
+      apprehendingOfficer: citation.apprehendingOfficerId ? `${citation.apprehendingOfficerId.firstName} ${citation.apprehendingOfficerId.lastName}` : ''
+    }));
+
+    res.status(200).json({
+      totalDocuments,
+      totalPages: Math.ceil(totalDocuments / limit),
+      currentPage: page,
+      pageSize: limit,
+      dpsCitations: formattedCitations,
     });
   } catch (error) {
     console.error('Failed to fetch DPS Citations:', error);
@@ -175,17 +222,3 @@ exports.deleteDPSCitation = async (req, res) => {
     res.status(500).send(error.message);
   }
 };
-
-{
-  /* exports.deleteDPSCitation = async (req, res) => {
-  try {
-    const dpscitation = await DPSCitation.findByIdAndDelete(req.params.id);
-    if (!application) {
-      return res.status(404).send();
-    }
-    res.status(200).send(dpscitation);
-  } catch (error) {
-    res.status(500).send(error);
-  }
-};
- */}

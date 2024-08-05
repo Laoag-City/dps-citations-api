@@ -48,6 +48,10 @@ const DPSCitationSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
+  apprehendingOfficerId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Officer'
+  },
   apprehendingOfficer: {
     type: String,
     trim: true
@@ -55,10 +59,6 @@ const DPSCitationSchema = new mongoose.Schema({
   apprehendingUnitOf:{
     type:String,
     trim: true
-  },
-  apprehendingOfficerId:{
-    type: String,
-    trime: true
   },
   commuteStatus: {
     type: Boolean,
