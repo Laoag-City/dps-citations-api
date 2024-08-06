@@ -1,5 +1,9 @@
 const { validationResult } = require('express-validator');
+const mongoose = require('mongoose');
 const DPSCitation = require('../models/DPSCitation');
+
+// Helper function to check if a string is a valid ObjectId
+const isValidObjectId = (id) => mongoose.Types.ObjectId.isValid(id);
 
 // Create a new DPS Citation
 exports.createDPSCitation = async (req, res) => {
@@ -7,6 +11,13 @@ exports.createDPSCitation = async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
+    }
+
+    // Validate and convert apprehendingOfficerId to ObjectId
+    if (req.body.apprehendingOfficerId && isValidObjectId(req.body.apprehendingOfficerId)) {
+      req.body.apprehendingOfficerId = mongoose.Types.ObjectId(req.body.apprehendingOfficerId);
+    } else {
+      return res.status(400).send('Invalid apprehendingOfficerId');
     }
 
     const dpscitation = new DPSCitation(req.body);
@@ -102,6 +113,15 @@ exports.updateDPSCitation = async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
+    }
+
+    // Validate and convert apprehendingOfficerId to ObjectId if provided
+    if (req.body.apprehendingOfficerId) {
+      if (isValidObjectId(req.body.apprehendingOfficerId)) {
+        req.body.apprehendingOfficerId = mongoose.Types.ObjectId(req.body.apprehendingOfficerId);
+      } else {
+        return res.status(400).send('Invalid apprehendingOfficerId');
+      }
     }
 
     const dpscitation = await DPSCitation.findByIdAndUpdate(req.params.id, req.body, { new: true })
