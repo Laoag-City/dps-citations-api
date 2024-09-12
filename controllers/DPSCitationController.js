@@ -35,6 +35,10 @@ exports.getDPSCitations = async (req, res) => {
     const limit = parseInt(req.query.limit) || 10;
     const skip = (page - 1) * limit;
     const searchQuery = req.query.search || '';
+    
+    // Extract date range from query parameters
+    const startDate = req.query.startDate ? new Date(req.query.startDate) : null;
+    const endDate = req.query.endDate ? new Date(req.query.endDate) : null;
 
     const query = {
       $or: [
@@ -47,6 +51,15 @@ exports.getDPSCitations = async (req, res) => {
       ],
     };
 
+    // Add date range filter if both startDate and endDate are provided
+    if (startDate && endDate) {
+      query.dateApprehended = { $gte: startDate, $lte: endDate };
+      } else if (startDate) {
+        query.dateApprehended = { $gte: startDate };
+        } else if (endDate) {
+          query.dateApprehended = { $lte: endDate };
+        }
+    
     const totalDocuments = await DPSCitation.countDocuments(query);
 
     const dpsCitations = await DPSCitation.find(query)
