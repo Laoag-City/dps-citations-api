@@ -15,7 +15,7 @@ exports.createDPSCitation = async (req, res) => {
 
     // Validate and convert apprehendingOfficerId to ObjectId
     if (req.body.apprehendingOfficerId && isValidObjectId(req.body.apprehendingOfficerId)) {
-      req.body.apprehendingOfficerId = mongoose.Types.ObjectId(req.body.apprehendingOfficerId);
+      req.body.apprehendingOfficerId = new mongoose.Types.ObjectId(req.body.apprehendingOfficerId);
     } else {
       return res.status(400).send('Invalid apprehendingOfficerId');
     }
